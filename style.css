@@ -1,0 +1,28 @@
+/* Custom smooth scroll behaviors */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Premium micro-shadow card effect */
+.premium-illustration-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-illustration-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.12);
+}
+
+/* Custom premium slow bounce for vector illustrations */
+@keyframes bounceSlow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounceSlow 4s ease-in-out infinite;
+}
