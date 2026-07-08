@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Your Home Cleaning Services</title>
+    <title>Professional Home Cleaning Services | FirstCleaning</title>
     <!-- Tailwind CSS Engine -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- AOS Animation Stylesheet -->
@@ -16,12 +16,12 @@
     <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
         <div class="text-xl font-bold tracking-tight text-[#1E3A27]">First<span class="text-emerald-600">Cleaning</span></div>
         <div class="hidden md:flex gap-8 font-semibold text-slate-600 text-xs tracking-wider uppercase">
-            <a href="#about" class="hover:text-[#1E3A27] transition-colors">Home</a>
+            <a href="#" class="hover:text-[#1E3A27] transition-colors">Home</a>
             <a href="#about" class="hover:text-[#1E3A27] transition-colors">About Us</a>
-            <a href="#services" class="hover:text-[#1E3A27] transition-colors">Services</a>
             <a href="#pricing" class="hover:text-[#1E3A27] transition-colors">Plans</a>
         </div>
-        <a href="#contact" class="bg-[#1E3A27] hover:bg-[#15291B] text-white font-bold px-6 py-2.5 rounded-full transition-all text-xs uppercase tracking-wider">Book Now</a>
+        <!-- 1. The "Book Now" Button (Hero Section Link) -->
+        <a href="#booking-form" class="bg-[#1E3A27] hover:bg-[#15291B] text-white font-bold px-6 py-2.5 rounded-full transition-all text-xs uppercase tracking-wider">Book Now</a>
     </nav>
 
     <!-- 2. HERO AREA WITH LARGE DATA FORM AND OVERLAY BACKGROUND -->
@@ -31,18 +31,23 @@
         <div class="absolute inset-0 bg-gradient-to-r from-[#1E3A27]/90 to-slate-900/40"></div>
 
         <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center w-full">
-            <!-- Form Block inside Hero (Just like left side of your screenshot) -->
-            <div class="md:col-span-5 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl" data-aos="fade-right">
+            
+            <!-- 2. The Integrated Booking Form Section -->
+            <div id="booking-form" class="md:col-span-5 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl" data-aos="fade-right" style="scroll-margin-top: 100px;">
                 <h3 class="text-lg font-bold tracking-tight text-white mb-2">Get Quick Quote</h3>
                 <p class="text-xs text-slate-300 mb-6">Expert cleaning solutions engineered for your spaces.</p>
-                <form class="space-y-4">
+                <form class="space-y-4" onsubmit="event.preventDefault();">
                     <input type="text" placeholder="Your Name" class="w-full bg-white/90 text-slate-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none placeholder:text-slate-400">
                     <input type="tel" placeholder="Phone Number" class="w-full bg-white/90 text-slate-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none placeholder:text-slate-400">
-                    <select class="w-full bg-white/90 text-slate-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none">
-                        <option>House Cleaning</option>
-                        <option>Office Maintenance</option>
-                        <option>Window Scrubbing</option>
+                    
+                    <!-- Updated Service Dropdown -->
+                    <select id="service-select" class="w-full bg-white/90 text-slate-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none">
+                        <option value="general">House Cleaning (Custom Quote)</option>
+                        <option value="standard">Pro Care Plan ($250)</option>
+                        <option value="premium">Premium Care Plan ($450)</option>
+                        <option value="office">Office Maintenance</option>
                     </select>
+                    
                     <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition-colors mt-2 cursor-pointer shadow-lg">Submit Now</button>
                 </form>
             </div>
@@ -51,7 +56,7 @@
             <div class="md:col-span-7 space-y-6" data-aos="fade-left">
                 <span class="text-emerald-400 font-bold uppercase text-xs tracking-widest block">Welcome to First Cleaning</span>
                 <h1 class="text-4xl md:text-6xl font-normal leading-tight tracking-tight">
-                    PROFESSIONAL YOUR <br><span class="font-bold text-emerald-400">HOME CLEANING</span> SERVICES
+                    PROFESSIONAL <br><span class="font-bold text-emerald-400">HOME CLEANING</span> SERVICES
                 </h1>
                 <p class="text-slate-300 text-sm md:text-base max-w-xl leading-relaxed">
                     We maintain spaces meticulously so you can focus on what matters. Experienced teams handling premium sanitization across regional households daily.
@@ -121,7 +126,8 @@
                             <li class="flex items-center gap-2">✓ <span>Bathroom Tile Disinfection Setup</span></li>
                         </ul>
                     </div>
-                    <button class="w-full bg-[#1E3A27] hover:bg-[#15291B] text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider mt-8 transition-colors cursor-pointer">Select Plan</button>
+                    <!-- Updated Plan 1 Button -->
+                    <a href="#booking-form" data-plan="standard" class="select-plan-btn text-center w-full bg-[#1E3A27] hover:bg-[#15291B] text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider mt-8 transition-colors block cursor-pointer">Select Plan</a>
                 </div>
 
                 <!-- Plan 2 -->
@@ -143,7 +149,8 @@
                             <li class="flex items-center gap-2">✓ <span>Post-Job Inspection Quality Checklist Verification</span></li>
                         </ul>
                     </div>
-                    <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider mt-8 transition-colors cursor-pointer shadow-md">Select Plan</button>
+                    <!-- Updated Plan 2 Button -->
+                    <a href="#booking-form" data-plan="premium" class="select-plan-btn text-center w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider mt-8 transition-colors block cursor-pointer shadow-md">Select Plan</a>
                 </div>
             </div>
         </div>
@@ -171,5 +178,40 @@
     <!-- AOS JS Framework Files -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
+    <!-- 3. Smooth Scroll and Dropdown Target Selection Logic -->
+    <script>
+      // Initialize AOS Animations
+      AOS.init({ duration: 800, once: true });
+
+      // Handle custom smooth scrolling & form target behavior
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          
+          // Let standard hash links work normally if it's just a blank #
+          if (targetId === '#') return;
+          
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // Smoothly glide to the target form
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Check if the button pressed contains dynamic plan payload data
+            const chosenPlan = this.getAttribute('data-plan');
+            const dropdown = document.getElementById('service-select');
+            
+            if (chosenPlan && dropdown) {
+              dropdown.value = chosenPlan;
+            }
+          }
+        });
+      });
+    </script>
 </body>
 </html>
